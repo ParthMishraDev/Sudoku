@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <div class="sudoku-container">
+    <div class="loader" *ngIf="!isReady && !errorMessage"></div>
+    <span class="error-message" *ngIf="errorMessage">{{errorMessage}}</span>
+    <table id="grid" border="1" style="border-collapse: collapse;" *ngIf="isReady">
+        <tr class="row" *ngFor="let rows of board; let i = index">
+            <td class="cell" (click)="onSelectCell(i, j, cell)" *ngFor="let cell of rows; let j = index">{{cell}}</td>
+        </tr>
+    </table>
+  </div>
+  <button class="button" (click)="onReload()">Reload</button>
+</div>

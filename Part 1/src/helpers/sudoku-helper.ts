@@ -41,6 +41,7 @@ export class Sudoku {
                 if (this.board[row][col] == 0) {
                     for (let number = 1; number <= 9; number++) {
                     number = Math.floor(Math.random() * 9) +  1;
+                
                     if (this.isValid(this.board, row, col, number)) {
                             this.board[row][col] = number;
                             if (this.solve()) {
@@ -60,5 +61,9 @@ export class Sudoku {
 
     getBoard(): Number[][] {
         return this.board;
+    }
+
+    setBoard(board: Number[][]): void {
+        this.board = board; 
     }
 }
