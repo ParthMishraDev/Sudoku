@@ -12,8 +12,6 @@ app.get('/', function (req, res) {
 });
 
 app.get('/sudoku/board', function (req, res) {
-
-
   const sudoku = new Sudoku();
   let cell = null;
   // For pre-selected value

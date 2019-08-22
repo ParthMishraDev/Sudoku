@@ -1,0 +1,30 @@
+version: "2"
+services:
+  sudokuspa:
+    build: ./app
+    image: sudoku-spa:level-4
+    container_name: sudoku-spa
+    ports:
+     - "4200:8080"
+    links:
+     - "sudokuapi"
+    networks:
+     my-net:
+      ipv4_address: 172.10.0.2
+  sudokuapi:
+    build: ./api
+    image: sudoku-ws:level-4
+    container_name: sudoku-api
+    ports:
+     - "8080:3000"
+    environment:
+      - VIRTUAL_PORT=3000
+    networks:
+     my-net:
+      ipv4_address: 172.10.0.3
+networks:
+  my-net:
+    ipam:
+      config: 
+        - subnet: 172.10.0.0/24
+          gateway: 172.10.0.1
