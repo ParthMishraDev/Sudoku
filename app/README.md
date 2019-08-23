@@ -4,7 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-- Make sure the api is also running, as it uses proxy on the homepage to get the board.
+- Make sure the api is also running, as it uses proxy to get the board.
+- Run `npm install` to install all the dependencies.
 - Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change   any of the source files. 
 
 ## Build
