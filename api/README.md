@@ -10,7 +10,7 @@ Navigate to http://localhost:8080/ to see if the API is running.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [jest](https://github.com/facebook/jest).
+Run `npm run test` to execute the unit tests via [jest](https://github.com/facebook/jest).
 
 ## Request & Response Example
 
