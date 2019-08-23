@@ -5,7 +5,7 @@ This project was developed using node and express
 ## Running the server
 
 - Run `npm install` to install all the dependencies
-- After installing the dependencies, run `npm run build` or `yarn build' to start up the server locally. 
+- After installing the dependencies, run `npm run build` or `yarn build` to start up the server locally. 
 Navigate to http://localhost:8080/ to see if the API is running.
 
 ## Running unit tests
