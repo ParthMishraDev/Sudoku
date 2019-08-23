@@ -5,7 +5,7 @@ services:
     image: sudoku-spa:level-4
     container_name: sudoku-spa
     ports:
-     - "4200:8080"
+     - "4200:80"
     links:
      - "sudokuapi"
     networks:
@@ -16,9 +16,9 @@ services:
     image: sudoku-ws:level-4
     container_name: sudoku-api
     ports:
-     - "8080:3000"
+     - "8080:8080"
     environment:
-      - VIRTUAL_PORT=3000
+      - VIRTUAL_PORT=8080
     networks:
      my-net:
       ipv4_address: 172.10.0.3

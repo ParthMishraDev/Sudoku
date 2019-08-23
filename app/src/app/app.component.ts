@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   isReady: boolean = false;
   errorMessage: string;
   selectedInfo: any;
+  isCellSelected: boolean = false;
 
   constructor(private sudokuService: SudokuService) {}
 
@@ -37,6 +38,15 @@ export class AppComponent implements OnInit {
   }
 
   onSelectCell(i, j, cell) {
-    this.selectedInfo = Object.assign({ row: i, col: j, value: cell});
+    this.isCellSelected = !this.isCellSelected;
+    if (this.isCellSelected){
+      this.selectedInfo = Object.assign({ row: i, col: j, value: cell});
+    } else {
+      this.selectedInfo = null;
+    }
+  }
+
+  isSelectedCell(i , j) {
+    return this.selectedInfo && this.selectedInfo.row === i && this.selectedInfo.col === j;
   }
 }

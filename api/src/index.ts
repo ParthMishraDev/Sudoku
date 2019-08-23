@@ -15,7 +15,7 @@ app.get('/sudoku/board', function (req, res) {
   const sudoku = new Sudoku();
   let cell = null;
   // For pre-selected value
-  if (req.query.row && req.query.col) {
+  if (req.query.row && req.query.col && req.query.value) {
     cell = {
       row: req.query.row,
       col: req.query.col,
@@ -38,6 +38,6 @@ app.get('/sudoku/board', function (req, res) {
 });
 
 
-app.listen(3000, function () {
-  console.log('Sudoku app listening on port 3000!');
+app.listen(8080, function () {
+  console.log('Sudoku app listening on port 8080!');
 });
