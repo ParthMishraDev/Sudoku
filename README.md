@@ -20,7 +20,10 @@ Please note that, you should start the server initially before app since it uses
 
 There is a docker compose file present in the root directory, there are various steps to tweak it as per your need.
 Please note that, I am using package-lock.json file since it saves up time in build. 
-Try to have, dependencies installed first using `npm install` in APP before you run the service.
+If you don't have package-lock.json file instal dependencies first using `npm install` in APP before you run the service.
+
+Optionally, you can change the docker file in the by replacing `npm ci` with `npm install`. Also remove package-lock.json. 
+It will give some deprecated warnings, you can ignore those for now.
 
 ## Build & run the services
 
