@@ -18,7 +18,9 @@ Please note that, you should start the server initially before app since it uses
 
 ## Running via Docker
 
-There is a docker compose file present in the root directory, there are various steps to tweak it as per your need. 
+There is a docker compose file present in the root directory, there are various steps to tweak it as per your need.
+Please note that, I am using package-lock.json file since it saves up time in build. 
+Try to have, dependencies installed first using `npm install` in APP before you run the service.
 
 ## Build & run the services
 

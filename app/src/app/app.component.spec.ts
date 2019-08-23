@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { By } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SudokuService } from './services/sudoku.service';
@@ -36,25 +37,30 @@ describe('AppComponent', () => {
 
   it('should render a sudoku board', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance
+    const app = fixture.debugElement.componentInstance;
     app.board = Array.from({ length: 9}, () => Array(9).fill(0)); // Mock empty sudoku board
     fixture.detectChanges();
     let elements = fixture.debugElement.nativeElement.querySelectorAll('td');
     expect(elements.length).toBe(81);
   }));
 
-  // it('should reload a sudoku board', async(() => {
+  it('should reload the sudoku board and make it ready', async(async () => {
 
-  //   // Create an empty sudoku board
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance
-  //   app.board = Array.from({ length: 9}, () => Array(9).fill(0)); // Mock empty sudoku board
-  //   fixture.detectChanges();
-  //   let elements = fixture.debugElement.nativeElement.querySelector('td');
-  //   expect(elements.length).toBe(81);
+    // Create an empty sudoku board
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance
+    app.board = Array.from({ length: 9}, () => Array(9).fill(0)); // Mock empty sudoku board
+    fixture.detectChanges();
+    let elements = fixture.debugElement.nativeElement.querySelectorAll('td');
+    expect(elements.length).toBe(81);
 
-  //   // Find the button, and click and mock random data
-  //   let button = fixture.debugElement.nativeNode.querySelector('button');
+    // Find the button, and click and mock random data
+    let button = fixture.debugElement.nativeNode.querySelector('button') as HTMLButtonElement;
+    button.click();
 
-  // }));
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    expect(app.isReady).toBeTruthy();
+  }));
 });
