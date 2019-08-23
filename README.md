@@ -29,6 +29,8 @@ app is running on localhost:4200
 
 ## Run build only
 
-- Run `docker-compose up  --no-start` will create two images. The names are as follows:  
+- Run `docker-compose up  --no-start` to create images. The names are as follows:  
 API - sudoku-ws:level-4  
 APP - sudoku-spa:level-4
+
+- Then, we can use `docker build` and `docker run` respectively to serve up the application.
